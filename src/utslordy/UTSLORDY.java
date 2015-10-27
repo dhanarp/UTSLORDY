@@ -59,17 +59,49 @@ public class UTSLORDY {
             System.out.println(message);
             //end of phase 1
             message=inputlink.nextLine();
-            while(!message.startsWith("Hash"))
+            while(true)
             {
               System.out.println(message);
               //cacah kata
-              message=input.nextLine(); //input
-              //masukin ke string message
+              //message=input.nextLine(); //input
+              String[] kata= message.split(" ");
+              
+              int[] kataInt;
+                kataInt = new int[3];
+              kataInt[0]=Integer.parseInt(new String(kata[0]));
+              kataInt[1]=Integer.parseInt(new String(kata[2]));
+              int sum;
+              System.out.println(kataInt[0]+" "+kataInt[1]);
+              //end of cacah kata
+              //process
+              if(kata[1].equals("+"))
+                sum=kataInt[0]+kataInt[1];
+              else if(kata[1].equals("-"))
+                sum=kataInt[0]-kataInt[1];
+              else if(kata[1].equals("x"))
+                sum=kataInt[0]*kataInt[1];
+              else sum=kataInt[0]%kataInt[1];
+              message= Integer.toString(sum);
+              System.out.println(message);
+              //end of process
               os.write(new String("Result:"+message+"\n").getBytes());
               message=inputlink.nextLine();
               System.out.println(message);
+              if(message.startsWith("Hash")) break;
               message=inputlink.nextLine();
             }
+            //udah nemu hash"
+            message=inputlink.nextLine();
+            System.out.println(message);
+            message=inputlink.nextLine();
+            System.out.println(message);
+            os.write(new String("Hash:"+message).getBytes());
+            message=inputlink.nextLine();
+            System.out.println(message);
+           
+           
+           
+           
            
             os.close();
             is.close();
