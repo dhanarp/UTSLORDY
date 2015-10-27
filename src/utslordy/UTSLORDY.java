@@ -71,7 +71,7 @@ public class UTSLORDY {
               kataInt[0]=Integer.parseInt(new String(kata[0]));
               kataInt[1]=Integer.parseInt(new String(kata[2]));
               int sum;
-              System.out.println(kataInt[0]+" "+kataInt[1]);
+              //System.out.println(kataInt[0]+" "+kataInt[1]);
               //end of cacah kata
               //process
               if(kata[1].equals("+"))
@@ -87,20 +87,26 @@ public class UTSLORDY {
               os.write(new String("Result:"+message+"\n").getBytes());
               message=inputlink.nextLine();
               System.out.println(message);
-              if(message.startsWith("Hash")) break;
+              if(message.startsWith("Hash"))
+              {
+                    message=inputlink.nextLine();
+                    System.out.println(message);
+                    message=inputlink.nextLine();
+                    System.out.println(message);
+                    os.write(new String("Hash:"+message+"\n").getBytes());
+                    System.out.println("Hash:"+message);
+              }
               message=inputlink.nextLine();
+              System.out.println(message);
+              if(message.startsWith("666")) break;
             }
             //udah nemu hash"
-            message=inputlink.nextLine();
-            System.out.println(message);
-            message=inputlink.nextLine();
-            System.out.println(message);
-            os.write(new String("Hash:"+message).getBytes());
-            message=inputlink.nextLine();
-            System.out.println(message);
-           
-           
-           
+            //message=inputlink.nextLine();
+            //System.out.println(message);
+            
+            //if(message.startsWith("Hash"))
+              //{
+              //}
            
            
             os.close();
