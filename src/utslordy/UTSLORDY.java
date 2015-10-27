@@ -97,9 +97,10 @@ public class UTSLORDY {
                     System.out.println("Hash:"+message);
               }
               message=inputlink.nextLine();
-              System.out.println(message);
+              
               if(message.startsWith("666")) break;
             }
+            System.out.println(message);
             //udah nemu hash"
             //message=inputlink.nextLine();
             //System.out.println(message);
